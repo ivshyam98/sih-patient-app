@@ -7,6 +7,7 @@ import { File } from '@ionic-native/file';
 import { FileChooser } from '@ionic-native/file-chooser';
 import { FilePath } from '@ionic-native/file-path';
 import { HomePage } from '../home/home';
+import { VerifyPage } from '../verify/verify';
 /**
  * Generated class for the SignupPage page.
  *
@@ -28,15 +29,13 @@ export class SignupPage {
   public smoker:any;
   public userProfile: any;
   public downloadUrl:string;
-  public aadharimageurl:any;
-  picdata:any;
-  picurl:any;
-  mypicref:any;
+
+ 
    
   @ViewChild('password') password;
   constructor(public navCtrl: NavController,private authService: AuthService,private loadCtrl: LoadingController,private alertCtrl:AlertController, public navParams: NavParams,private filePath: FilePath,private fileChooser:FileChooser,private file: File) {
     this.userProfile = firebase.database().ref('patients');
-    this.mypicref = firebase.storage().ref('aadharimages/')
+   
   }
 
   ionViewDidLoad() {
@@ -67,7 +66,7 @@ export class SignupPage {
       this.userProfile.child(this.authService.getActiveUser().uid).set(
         patientdetails
       );
-      this.navCtrl.setRoot(HomePage);
+      this.navCtrl.setRoot(VerifyPage);
       
       })
     .catch(error=>{

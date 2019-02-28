@@ -14,13 +14,15 @@ import { AuthService } from '../services/auth';
 import { File } from '@ionic-native/file';
 import { FileChooser } from '@ionic-native/file-chooser';
 import { FilePath } from '@ionic-native/file-path';
+import { VerifyPage } from '../pages/verify/verify';
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     ListPage,
     SigninPage,
-    SignupPage
+    SignupPage,
+    VerifyPage
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,8 @@ import { FilePath } from '@ionic-native/file-path';
     HomePage,
     ListPage,
     SigninPage,
-    SignupPage
+    SignupPage,
+    VerifyPage
   ],
   providers: [
     StatusBar,
