@@ -8,12 +8,19 @@ import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
+import { SigninPage } from '../pages/signin/signin';
+import { SignupPage } from '../pages/signup/signup';
+import { AuthService } from '../services/auth';
+import { File } from '@ionic-native/file';
+import { FileChooser } from '@ionic-native/file-chooser';
+import { FilePath } from '@ionic-native/file-path';
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    SigninPage,
+    SignupPage
   ],
   imports: [
     BrowserModule,
@@ -23,11 +30,17 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    SigninPage,
+    SignupPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    AuthService,
+    File,
+    FileChooser,
+    FilePath,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

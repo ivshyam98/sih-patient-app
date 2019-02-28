@@ -1,0 +1,65 @@
+<!--
+  Generated template for the SignupPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Register</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form #f="ngForm" (ngSubmit)="onSignUp(f)">
+    <ion-list>
+         
+        <ion-item>
+          <ion-label floating>Name</ion-label>
+          <ion-input type="text" ngModel name="name" [max]=20 required #name="ngModel"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Email</ion-label>
+            <ion-input type="email" ngModel name="email" required #email="ngModel" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"></ion-input>
+          </ion-item>
+        
+            <ion-item>
+
+          <ion-label floating>Password</ion-label>
+          <ion-input type="password" ngModel name="password" [min]="6" required #password="ngModel"></ion-input>
+        </ion-item>  
+        <ion-item>
+              <ion-label floating>Gender</ion-label>
+              <ion-select [(ngModel)]="gender" name="gender" required>
+                <ion-option value="f">Female</ion-option>
+                <ion-option value="m">Male</ion-option>
+              </ion-select>
+            </ion-item>
+            <ion-item>
+               <ion-label floating>Smoker</ion-label>
+               <ion-select [(ngModel)]="smoker" name="smoker" required>
+                 <ion-option value="y">Yes</ion-option>
+                 <ion-option value="n">No</ion-option>
+               </ion-select>
+             </ion-item>
+            <ion-item>
+                <ion-label floating>Aadhar No.</ion-label>
+                <ion-input type="number" ngModel name="aadharno" required [max]=12 #aadharno="ngModel"></ion-input>
+              </ion-item> 
+              <ion-item>
+                  <ion-label floating>Phone</ion-label>
+                  <ion-input type="number" ngModel name="phone" [min]="10" required #phone="ngModel"></ion-input>
+                </ion-item>  
+                <ion-label center><b>Add Front Side Aadhar Card Image</b></ion-label>
+               
+                  
+                  
+                
+      </ion-list>
+     
+      <button ion-button type="submit" [disabled]="!f.valid">Sign Up</button>
+    </form>
+    <button ion-button (click)="chooseImage()"><ion-icon name="image">Select Image</ion-icon></button>
+    <button ion-button (click)="takePicture()"><ion-icon name="image">Take Picture</ion-icon></button> 
+    <img src="{{picUrl}}"/> 
+</ion-content>
