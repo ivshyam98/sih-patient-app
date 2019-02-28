@@ -12,6 +12,6 @@
 
 <ion-content padding>
   <button ion-button (click)="chooseImage()"><ion-icon name="image">Select Image</ion-icon></button>
-  <img *ngIf=downloadUrl src="{{downloadUrl}}" alt="Loading..." height="190" width="50" padding>
+  <img *ngIf=downloadUrl src="{{downloadUrl}}" alt="Loading..." height="200" width="200" padding>
   <button *ngIf=downloadUrl ion-button (click)="completeRegistration()">Complete Registration</button>
 </ion-content>

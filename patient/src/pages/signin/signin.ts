@@ -37,7 +37,7 @@ export class SigninPage {
     this.authService.signIn(form.value.email,form.value.password).then
     (data=>{
       loading.dismiss();
-      this.navCtrl.push(HomePage);
+      this.navCtrl.setRoot(HomePage);
     }).catch(error=>{loading.dismiss();
       const alert = this.alertCtrl.create({
         title: 'Signin failed!',

@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { NavController,AlertController } from 'ionic-angular';
-
+import { BarcodeScanner,BarcodeScannerOptions } from '@ionic-native/barcode-scanner';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
   public x:number;
-  constructor(public navCtrl: NavController,private alertController:AlertController,) {
+  options:BarcodeScannerOptions;
+  constructor(public navCtrl: NavController,private alertController:AlertController,private barcodeScanner: BarcodeScanner) {
     this.x = Math.floor((Math.random() * 5) + 1);
     //alert(this.x)
     this.popquotes(this.x);
@@ -28,5 +29,12 @@ export class HomePage {
     });
 
     await alert.present();
+  }
+  async scanBarcode()
+  {
+   
+      const results = await this.barcodeScanner.scan()
+      console.log(results)
+      alert(results.format)
   }
 }

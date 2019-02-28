@@ -34,7 +34,7 @@ export class MyApp {
       if (user) {
 
         this.isAuthenticated = true;
-        this.rootPage=HomePage;
+       // this.rootPage=HomePage;
         
       } else {
         this.isAuthenticated = false;

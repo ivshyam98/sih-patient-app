@@ -15,6 +15,7 @@ import { File } from '@ionic-native/file';
 import { FileChooser } from '@ionic-native/file-chooser';
 import { FilePath } from '@ionic-native/file-path';
 import { VerifyPage } from '../pages/verify/verify';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 @NgModule({
   declarations: [
     MyApp,
@@ -44,6 +45,7 @@ import { VerifyPage } from '../pages/verify/verify';
     File,
     FileChooser,
     FilePath,
+    BarcodeScanner,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
