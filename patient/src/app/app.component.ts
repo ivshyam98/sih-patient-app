@@ -7,6 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { SigninPage } from '../pages/signin/signin';
 import { AuthService } from '../services/auth';
+import { ENV } from '../environments/environment.dev';
 @Component({
   templateUrl: 'app.html'
 })
@@ -22,12 +23,7 @@ export class MyApp {
   constructor(public platform: Platform, public statusBar: StatusBar, private authService:AuthService,public splashScreen: SplashScreen) {
     this.initializeApp();
     
-    firebase.initializeApp({apiKey: "AIzaSyBfbeUhDGFqYDTS889Y8RpVkXtXLWFH5iQ",
-    authDomain: "ncd-surveillance-system.firebaseapp.com",
-    databaseURL: "https://ncd-surveillance-system.firebaseio.com",
-    projectId: "ncd-surveillance-system",
-    storageBucket: "ncd-surveillance-system.appspot.com",
-    messagingSenderId: "728125729015"});
+    firebase.initializeApp(ENV);
     firebase.auth().onAuthStateChanged( user=>{
       if (user) {
 

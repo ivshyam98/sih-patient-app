@@ -17,6 +17,7 @@ import { FileChooser } from '@ionic-native/file-chooser';
 import { FilePath } from '@ionic-native/file-path';
 import { VerifyPage } from '../pages/verify/verify';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { ENV } from '../environments/environment.dev';
 @NgModule({
   declarations: [
     MyApp,
@@ -29,12 +30,7 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    AngularFireModule.initializeApp({apiKey: "AIzaSyBfbeUhDGFqYDTS889Y8RpVkXtXLWFH5iQ",
-    authDomain: "ncd-surveillance-system.firebaseapp.com",
-    databaseURL: "https://ncd-surveillance-system.firebaseio.com",
-    projectId: "ncd-surveillance-system",
-    storageBucket: "ncd-surveillance-system.appspot.com",
-    messagingSenderId: "728125729015"}),
+    AngularFireModule.initializeApp(ENV),
     AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
