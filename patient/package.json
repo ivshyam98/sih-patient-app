@@ -29,6 +29,7 @@
     "@ionic-native/status-bar": "~4.18.0",
     "@ionic/storage": "2.2.0",
     "angularfire2": "^5.1.1",
+    "com.lampa.startapp": "git+https://github.com/lampaa/com.lampa.startapp.git",
     "cordova-android": "7.0.0",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-file": "^6.0.1",
@@ -68,7 +69,8 @@
       "cordova-plugin-ionic-keyboard": {},
       "phonegap-plugin-barcodescanner": {
         "ANDROID_SUPPORT_V4_VERSION": "27.+"
-      }
+      },
+      "com.lampa.startapp": {}
     },
     "platforms": [
       "android"

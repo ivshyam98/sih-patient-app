@@ -4,6 +4,7 @@ import {AuthService} from '../../services/auth';
 import {NgForm} from '@angular/forms';
 import { SignupPage } from '../signup/signup';
 import { HomePage } from '../home/home';
+// import startApp from '../../../platforms/android/app/src/main/assets/www/plugins/com.lampa.startapp/www/startApp.js'
 /**
  * Generated class for the SigninPage page.
  *
@@ -28,6 +29,13 @@ export class SigninPage {
   {
     this.navCtrl.push(SignupPage);
   }
+  // goToMobdoc()
+  // {
+  //   var sApp = startApp.set({
+  //     "package": "com.example.codex_pc.mob_dco" //The packageName of the app I want to open
+  // });
+  // sApp.start();
+  // }
   onSignIn(form:NgForm){
     const loading = this.loadingCtrl.create({
       content: 'Signing you in...'
