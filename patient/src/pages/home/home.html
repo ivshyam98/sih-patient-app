@@ -8,5 +8,43 @@
 </ion-header>
 
 <ion-content padding>
+    <ion-card *ngFor="let diagnosis of diagnosisListRef$ | async">
+    
+        <ion-card-content>
+          <!-- Add card content here! -->
+          <ion-list>
+              <ion-item text-wrap>
+               Exercise > 30 mins :  {{diagnosis.excersize_more_than_30_min}}
+                </ion-item>
+            <ion-item text-wrap>
+                Medication For Diabetes : {{diagnosis.medication_for_diabetes}} 
+              </ion-item>
+    
+              <ion-item text-wrap>
+              Medication For Hyperlipidemia : {{diagnosis.medication_for_hyperlipidemia}}
+              </ion-item>
+    
+              <ion-item text-wrap>
+                Medication For Hypertension : {{diagnosis.medication_for_hypertension}}
+              </ion-item>
+    
+              <ion-item text-wrap>
+                  Other Symptoms : {{diagnosis.othet_symptoms}}
+                </ion-item>
+                <ion-item text-wrap>
+                   Quick Walking : {{diagnosis.quick_walking}}
+                  </ion-item>
+                 <ion-item text-wrap>
+                    Prescription : {{diagnosis.prescripion}}
+                  </ion-item> 
+           </ion-list>
+          
+        
+          </ion-card-content>
+        
+     
+       
+       
+      </ion-card>
   <button ion-button (click)="scanBarcode()">Scan</button>
 </ion-content>

@@ -5,7 +5,8 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
-
+import { AngularFireModule } from 'angularfire2';
+import {AngularFireDatabaseModule} from 'angularfire2/database';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { SigninPage } from '../pages/signin/signin';
@@ -28,6 +29,13 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    AngularFireModule.initializeApp({apiKey: "AIzaSyBfbeUhDGFqYDTS889Y8RpVkXtXLWFH5iQ",
+    authDomain: "ncd-surveillance-system.firebaseapp.com",
+    databaseURL: "https://ncd-surveillance-system.firebaseio.com",
+    projectId: "ncd-surveillance-system",
+    storageBucket: "ncd-surveillance-system.appspot.com",
+    messagingSenderId: "728125729015"}),
+    AngularFireDatabaseModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
